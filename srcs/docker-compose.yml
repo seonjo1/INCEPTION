@@ -31,8 +31,8 @@ services:
         init: true
 
 volumes:
-	vol:
+    vol:
 
 networks:
-	intra:
-		driver: bridge
+    intra:
+        driver: bridge
