@@ -1,0 +1,12 @@
+	#mariadb:
+		#image: mariadb
+		#build:
+			#context: ./requirements/mariadb/
+			#dockerfile: Dockerfile
+		#restart: always
+		#expose:
+			#- "3306"
+		#networks:
+			#- intra
+		#init: true
+		#tty: true
