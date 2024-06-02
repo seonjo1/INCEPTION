@@ -1,40 +1,42 @@
 version: '3'
 
 services:
-	mariadb:
-		image: mariadb
-		build:
-			context: ./requirements/mariadb/
-			dockerfile: Dockerfile
-		restart: always
-		expose:
-			- "3306"
-		networks:
-			- intra
-		init: true
+	#mariadb:
+		#image: mariadb
+		#build:
+			#context: ./requirements/mariadb/
+			#dockerfile: Dockerfile
+		#restart: always
+		#expose:
+			#- "3306"
+		#networks:
+			#- intra
+		#init: true
 		#tty: true
 	nginx:
 		image: nginx
+		container_name: nginx
 		build:
 			context: ./requirements/nginx/
 			dockerfile: Dockerfile
 		restart: always
 		ports:
 			- "443:443"
-		#volumes:
-			#- data:/var/www/html
+		volumes:
+			- vol:/var/www/html
 		networks:
 			- intra
 		init: true
 		#tty: true
 	wordpress:
 		image: wordpress
+		container_name: wordpress
 		build:
 			context: ./requirements/wordpress/
 			dockerfile: Dockerfile
 		restart: always
-		#volumes:
-			#- data:/var/www/html
+		volumes:
+			- vol:/var/www/html
 		expose: 
 			- "9000"
 		networks:
@@ -42,8 +44,8 @@ services:
 		init: true
 		#tty: true
 
-#volumes:
-	#data: {}
+volumes:
+	vol:
 
 networks:
 	intra:

@@ -24,16 +24,3 @@ RUN mkdir -p /etc/nginx/ssl && \
 
 # Nginx 설정 파일 복사
 COPY ./nginx.conf /etc/nginx/nginx.conf
-
-# html 디렉터리와 그 하위에 있는 모든 파일 권한 변경
-RUN chmod -R 777 /var/www/html
-
-
-
-# php
-
-RUN apt-get update -y
-
-RUN apt-get install php-fpm -y
-
-EXPOSE 9000
