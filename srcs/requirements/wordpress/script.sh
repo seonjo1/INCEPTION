@@ -24,6 +24,8 @@ wp core install \
     --admin_password=password \
     --admin_email=seonjo@student.42seoul.kr
 
+# 권한 설정
+chmod -R 777 /var/www
 
 # www.conf 파일 수정
 # 듣기 포트 9000번으로 변경
