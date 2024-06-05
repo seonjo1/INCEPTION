@@ -1,13 +1,13 @@
 
-
-wp core install \
+wp config create \
     --path=/var/www/html \
-    --url=seonjo.42.fr \
-    --title=seonjo \
-    --admin_user=seonjo \
-    --admin_password=password \
-    --admin_email=seonjo@student.42seoul.kr \
+    --dbname=wordpress \
+    --dbuser=wordpress \
+    --dbpass=wordpress \
+    --dbhost=localhost \
+    --skip-check \
     --allow-root
+
 
 chmod -R 777 /var/www
 
