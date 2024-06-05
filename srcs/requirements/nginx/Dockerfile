@@ -26,4 +26,4 @@ RUN mkdir -p /etc/nginx/ssl && \
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 
-RUN mkdir -p /test
+RUN mkdir -p /var/www/test
