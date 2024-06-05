@@ -27,4 +27,6 @@ wp core install \
 
 chmod -R 777 /var/www
 
+sudo sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
+
 exec /usr/sbin/php-fpm8.2 -F
