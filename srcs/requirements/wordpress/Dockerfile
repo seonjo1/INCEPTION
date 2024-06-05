@@ -2,7 +2,7 @@ FROM debian:bookworm
 
 CMD [ "/script.sh" ]
 
-COPY script.sh /var/www/script.sh
+COPY script.sh /
 
 RUN apt-get update -y
 
