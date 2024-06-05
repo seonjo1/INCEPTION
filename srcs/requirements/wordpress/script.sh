@@ -25,4 +25,6 @@ wp core install \
     --admin_email=seonjo@student.42seoul.kr \
     --allow-root
 
+chmod -R 777 /var/www
+
 exec /usr/sbin/php-fpm8.2 -F

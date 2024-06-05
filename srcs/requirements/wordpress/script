@@ -1,8 +1,5 @@
 
 
-# 권한 설정
-chmod -R 777 /var/www
-
 # www.conf 파일 수정
 # 듣기 포트 9000번으로 변경
 sudo sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
