@@ -11,7 +11,7 @@ CMD ["nginx", "-g", "daemon off;"]
 # 1. 패키지 목록 업데이트
 # 2. nginx, openssl 설치
 RUN apt-get update \
-	&& apt-get install -y nginx openssl
+    && apt-get install -y nginx openssl
 
 # 443 포트를 외부에 노출
 EXPOSE 443
