@@ -22,4 +22,3 @@ wp core install \
 # www.conf 파일 수정
 # 듣기 포트 9000번으로 변경
 # php-fpm이 환경변수를 초기화하지 않도록 설치
-echo "clear_env = no" >> /etc/php/8.2-fpm/pool.d/www.conf
