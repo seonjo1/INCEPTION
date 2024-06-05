@@ -2,15 +2,12 @@ FROM debian:bookworm
 
 CMD [ "/script.sh" ]
 
+EXPOSE 9000
+
+RUN apt-get update -y &&
+    apt-get install php8.2-fpm -y &&
+    mkdir -p /var/www/html
+
 COPY script.sh /
 
-RUN apt-get update -y
-
-RUN apt-get install php8.2-fpm -y
-
-RUN mkdir -p /var/www/html
-
-RUN chmod +x /var/www/script.sh
-
-
-EXPOSE 9000
+RUN chmod +x /script.sh
