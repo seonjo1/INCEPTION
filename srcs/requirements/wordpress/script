@@ -9,9 +9,14 @@ wp config create \
     --allow-root
 
 
-chmod -R 777 /var/www
-
-sudo sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
+wp core install \
+    --path=/var/www/html \
+    --url=seonjo.42.fr \
+    --title=seonjo \
+    --admin_user=seonjo \
+    --admin_password=password \
+    --admin_email=seonjo@student.42seoul.kr \
+    --allow-root
 
 
 # www.conf 파일 수정

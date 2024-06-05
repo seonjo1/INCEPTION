@@ -7,13 +7,8 @@ mv wp-cli.phar /usr/local/bin/wp
 
 wp core download --path=/var/www/html --allow-root
 
-wp core install \
-    --path=/var/www/html \
-    --url=seonjo.42.fr \
-    --title=seonjo \
-    --admin_user=seonjo \
-    --admin_password=password \
-    --admin_email=seonjo@student.42seoul.kr \
-    --allow-root
+chmod -R 777 /var/www
+
+sudo sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
 
 exec /usr/sbin/php-fpm8.2 -F
