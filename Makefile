@@ -5,8 +5,8 @@ make:
 
 clean:
 	sudo docker compose -f ./srcs/docker-compose.yml down -v
-	sudo docker image prune
-	sudo docker system prune -a
+	sudo docker image prune -y
+	sudo docker system prune -a -y
 
 fclean: clean
 
