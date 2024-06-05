@@ -1,12 +1,4 @@
 
-wp config create \
-    --path=/var/www/html \
-    --dbname=wordpress \
-    --dbuser=wordpress \
-    --dbpass=wordpress \
-    --dbhost=localhost \
-    --skip-check \
-    --allow-root
 
 wp core install \
     --path=/var/www/html \
