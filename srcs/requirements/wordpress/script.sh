@@ -16,15 +16,6 @@ wp config create \
     --dbhost=mariadb \
     --allow-root
 
-wp core install \
-    --url=$DOMAIN \
-    --title=INCEPTION \
-    --admin_user=$ADMIN_USER \
-    --admin_password=$ADMIN_PASS \
-    --admin_email=$ADMIN_EMAIL \
-    --allow-root
-
-wp user create sunjo sunjo@gmail.com --user_pass=0000 --allow-root
 
 chmod -R 777 /var/www
 
