@@ -5,10 +5,10 @@ chmod +x wp-cli.phar
 
 mv wp-cli.phar /usr/local/bin/wp
 
-wp core download --path=/var/www/html --allow-root
+wp core download --allow-root
 
 wp config create \
-    --path=/var/www/html \
+	--force \
     --dbname=$DB_NAME \
     --dbuser=$DB_USER \
     --dbpass=$DB_PASS \
