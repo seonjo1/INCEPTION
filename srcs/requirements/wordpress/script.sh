@@ -9,7 +9,7 @@ wp core download --path=/var/www/html --allow-root
 
 wp config create \
 	--force \
-    --skip-check \
+	--path=/var/www/html \
     --dbname=$DB_NAME \
     --dbuser=$DB_USER \
     --dbpass=$DB_PASS \
