@@ -7,7 +7,6 @@ mv wp-cli.phar /usr/local/bin/wp
 
 wp core download --path=/var/www/html --allow-root
 
-
 wp config create \
 	--force \
     --skip-check \
