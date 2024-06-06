@@ -1,3 +1,4 @@
+chmod -R 777 /var/www
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
@@ -17,7 +18,14 @@ wp config create \
     --dbhost=mariadb \
     --allow-root
 
-chmod -R 777 /var/www
+wp core install \
+    --path=/var/www/html \
+    --url=$DOMAIN \
+    --title=seonjo \
+    --admin_user=$ADMIN_USER \
+    --admin_password=$ADMIN_PASS \
+    --admin_email=$ADMIN_EMAIL \
+    --allow-root
 
 sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
 
