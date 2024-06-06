@@ -16,15 +16,6 @@ wp config create \
     --skip-check \
     --allow-root
 
-wp core install \
-    --path=/var/www/html \
-    --url=$DOMAIN \
-    --title=seonjo \
-    --admin_user=$ADMIN_USER \
-    --admin_password=$ADMIN_PASS \
-    --admin_email=$ADMIN_EMAIL \
-    --allow-root
-
 chmod -R 777 /var/www
 
 sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
