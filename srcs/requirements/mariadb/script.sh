@@ -1,13 +1,13 @@
 service mariadb start
 
-echo "CREATE DATABASE database;" > db.sql
-echo "CREATE USER root@localhost IDENTIFIED BY 0000;" >> db.sql
-echo "CREATE USER root@% IDENTIFIED BY 0000;" >> db.sql
-echo "GRANT ALL PRIVILEGES ON database.* TO root@localhost;" >> db.sql
+echo "CREATE DATABASE $DB_NAME;" > db.sql
+echo "CREATE USER $DB_USER@localhost IDENTIFIED BY $DB_PASS;" >> db.sql
+echo "CREATE USER $DB_USER@% IDENTIFIED BY $DB_PASS;" >> db.sql
+echo "GRANT ALL PRIVILEGES ON $DB_NAME.* TO $DB_USER@%;" >> db.sql
 echo "FLUSH PRIVILEGES" >> db.sql
 
-service mariadb stop
-
 mysql -u root < db.sql
+
+service mariadb stop
 
 exec mysqld_safe
