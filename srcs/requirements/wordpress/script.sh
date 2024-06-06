@@ -26,6 +26,8 @@ wp core install \
 	--skip-email \
     --allow-root
 
+wp user create $WP_USER $WP_USER_EMAIL --user_pass=$WP_USER_PASS
+
 chmod -R 777 /var/www
 
 sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
