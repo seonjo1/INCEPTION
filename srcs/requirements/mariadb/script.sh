@@ -1,5 +1,7 @@
 service mariadb start
 
+sleep 1
+
 cat <<EOF > db.sql
 CREATE DATABASE IF NOT EXISTS $DB_NAME;
 CREATE USER IF NOT EXISTS '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';
