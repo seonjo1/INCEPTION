@@ -5,15 +5,23 @@ chmod +x wp-cli.phar
 
 mv wp-cli.phar /usr/local/bin/wp
 
-wp core download --path=/var/www/html --allow-root
+cd /var/www/html
+
+wp core download --allow-root
 
 wp config create \
-	--force \
-	--path=/var/www/html \
     --dbname=$DB_NAME \
     --dbuser=$DB_USER \
     --dbpass=$DB_PASS \
     --dbhost=mariadb \
+    --allow-root
+
+wp core install \
+    --url=$DOMAIN \
+    --title=INCEPTION \
+    --admin_user=$ADMIN_USER \
+    --admin_password=$ADMIN_PASS \
+    --admin_email=$ADMIN_EMAIL \
     --allow-root
 
 chmod -R 777 /var/www
