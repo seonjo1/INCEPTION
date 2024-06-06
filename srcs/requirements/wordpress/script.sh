@@ -7,6 +7,16 @@ mv wp-cli.phar /usr/local/bin/wp
 
 wp core download --path=/var/www/html --allow-root
 
+wp config create \
+	--path=/var/www/html \
+	--force \
+    --skip-check \
+    --dbname=$DB_NAME \
+    --dbuser=$DB_USER \
+    --dbpass=$DB_PASS \
+    --dbhost=mariadb \
+    --allow-root
+
 
 chmod -R 777 /var/www
 
