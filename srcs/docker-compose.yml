@@ -56,12 +56,14 @@ services:
 
 volumes:
   wp-vol:
+    name: wp-vol
     driver: local
     driver_opts:
       type: none
       o: bind
       device: /home/seonjo/data/wp
   db-vol:
+    name: db-vol
     driver: local
     driver_opts:
       type: none
@@ -70,4 +72,5 @@ volumes:
 
 networks:
   intra:
+    name: intra
     driver: bridge
