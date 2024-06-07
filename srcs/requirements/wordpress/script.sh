@@ -20,7 +20,6 @@ if [ ! -f /usr/local/bin/wp ]; then
 		--allow-root
 
 	wp core install \
-		--locale=ko_KR \
 		--url=$DOMAIN \
 		--title=INCEPTION \
 		--admin_user=$ADMIN_USER \
