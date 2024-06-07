@@ -1,34 +1,36 @@
 
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+if [ ! -f /usr/local/bin/wp ]; then
+	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
-chmod +x wp-cli.phar
+	chmod +x wp-cli.phar
 
-mv wp-cli.phar /usr/local/bin/wp
+	mv wp-cli.phar /usr/local/bin/wp
 
-cd /var/www/html
+	cd /var/www/html
 
-rm -rf *
+	rm -rf *
 
-wp core download --allow-root
+	wp core download --allow-root
 
-wp config create \
-    --dbname=$DB_NAME \
-    --dbuser=$DB_USER \
-    --dbpass=$DB_PASS \
-    --dbhost=mariadb \
-    --allow-root
+	wp config create \
+		--dbname=$DB_NAME \
+		--dbuser=$DB_USER \
+		--dbpass=$DB_PASS \
+		--dbhost=mariadb \
+		--allow-root
 
-wp core install \
-    --locale=ko_KR \
-    --url=$DOMAIN \
-    --title=INCEPTION \
-    --admin_user=$ADMIN_USER \
-    --admin_password=$ADMIN_PASS \
-    --admin_email=$ADMIN_EMAIL \
-	--skip-email \
-    --allow-root
+	wp core install \
+		--locale=ko_KR \
+		--url=$DOMAIN \
+		--title=INCEPTION \
+		--admin_user=$ADMIN_USER \
+		--admin_password=$ADMIN_PASS \
+		--admin_email=$ADMIN_EMAIL \
+		--skip-email \
+		--allow-root
 
-wp user create $WP_USER $WP_USER_EMAIL --user_pass=$WP_USER_PASS --allow-root
+	wp user create $WP_USER $WP_USER_EMAIL --user_pass=$WP_USER_PASS --allow-root
+fi
 
 chmod -R 777 /var/www
 
