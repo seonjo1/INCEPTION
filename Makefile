@@ -1,14 +1,14 @@
 all : make
 
 make:
-	sudo docker compose -f ./srcs/docker-compose.yml up -d
+	docker compose -f ./srcs/docker-compose.yml up -d
 
 clean:
-	sudo docker compose -f ./srcs/docker-compose.yml down -v
+	docker compose -f ./srcs/docker-compose.yml down -v
 
 fclean: clean
-	sudo docker image prune
-	sudo docker system prune -a
+	docker image prune
+	docker system prune -a
 
 re : fclean all
 
