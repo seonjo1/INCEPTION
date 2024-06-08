@@ -33,8 +33,8 @@ fi
 
 chmod -R 777 /var/www
 
-sed -i 's/listen = \/run\/php\/php8.2-fpm.sock/listen = 9000/g' /etc/php/8.2/fpm/pool.d/www.conf
+sed -i 's/listen = \/run\/php\/php8.1-fpm.sock/listen = 9000/g' /etc/php/8.1/fpm/pool.d/www.conf
 
-echo "clear_env = no" >> /etc/php/8.2/fpm/pool.d/www.conf
+echo "clear_env = no" >> /etc/php/8.1/fpm/pool.d/www.conf
 
-exec /usr/sbin/php-fpm8.2 -F
+exec /usr/sbin/php-fpm8.1 -F
